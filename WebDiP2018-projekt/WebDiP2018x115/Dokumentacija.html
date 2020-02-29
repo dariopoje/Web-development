@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dokumentacija</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+              content="width=device-width, initial-scale=1.0">
+        <meta name="naslov" 
+              content="Prijava">
+        <meta name="autor" 
+              content="Dario Poje">
+        <meta name="kljucnaRijec" 
+              content="korisničko ime,lozinka,prijava">
+        <link href="main_css.css" rel="stylesheet" type="text/css">    
+
+    </head>
+    <body>
+        <header>
+            <h1>Dokumentacija</h1>
+        </header>
+        <nav>
+                <ul>
+                    <li><a href="index.php">Početna</a></li>
+                    
+                </ul>
+            </nav>
+        
+        <h2>Opis projektnog zadatka</h2>
+        
+        <section><p>Svrha ovog projektnog zadatka je bila napraviti sustav koji će korisniku omogućiti  upravljanje ronilačkim centrima, rezervacijama termina za ronjenje i sl</p>
+        <p>Postoje 4 uloge korisnika</p>
+        <ol>
+            <li>Administrator</li>
+            <li>Moderator</li>
+            <li>Registrirani korisnik</li>
+            <li>Neregistrirani korisnik</li>
+        </ol>
+        <p>Administrator može: kreirati centre te istima dodijeliti moderatore, kreirati  vrste ronilačkih lokacija, odobriti ili odbiti lokacije koje je kreirao moderator i pregledavati statistike zahtjeva za rezervacijom termina</p>
+        <p>Moderator može: kreirati lokacije za ronjenje u ronilačkom centru, kreirati termine ronjenja za neku lokaciju, i pregledavati te odobravati zahtjeve korisnika za rezervacijom mjesta</p>
+        <p>Registrirani korisnik može: kreirati zahtjeve za rezervacijom termina za ronjenje, može kreirati zahtjev za kreiranjem oglasa, pregledavati zahtjeve sa statusom termina ronjenja, postaviti sliku s lokacije na kojima je ronio</p>
+        <p>Neregistrirani korisnik može: pretraživati lokacije za ronjenje uz mogućnost filtriranja po ronilačkom centru i vrsti lokacije,vidi informacije o lokaciji sa slikama te lokacije, te vidi informacije o ronilačkom centru </p>
+        </section>
+        
+        <h2>Opis projektnog riješenja</h2>
+        <section>
+        <p>Projektno riješenje sadrži bazu podataka u kojoj se nalaze svi entiteti potrebni za rad sustava. Projekt je napravljen od par HTML dokumenata, većeg dijela PHP datoteka te jedne CSS datoteke. Također, još je u radu bilo korišteni i AJAX. PHP je bio korišten za rad s bazom podataka i stvaranje stranica, HTML za stranice koje nisu trebale koristiti PHP, a AJAX za automatsko ažuriranje, tj. ispis podataka.</p>
+        <h2>ERA</h2>
+        <figure><img src="Slike/era.png" height="400" width="600" alt="era" style="margin-left: 300px"></figure>
+        </section>
+        
+        <h2>Navigacijski model</h2>
+        <section>
+        <figure><img src="Slike/navigacijski_dijagram.png" height="400" width="600" alt="navigacijski" style="margin-left: 300px"></figure>
+        </section>
+        
+        <h2>Popis i opis skripata</h2>
+        <section>
+        <p>Skripte i stranice koje se pojavljuju kod svih korisnika su sljedeće: </p>
+        <ol>
+            <li>index.php - početna stranica</li>
+            <li>login.php - prijava korisnika</li>
+            <li>registracija.php - registracija neregistriranog korisnika</li>
+        </ol>
+        <p>Skripte koje koristi administrator: </p>
+        <ol>
+            <li>admin_page.php - stranica administratora gdje (od)blokira korisnika, također stranica sadrži linkove na ostale stranice administratora</li>
+            <li>Admin_pregledDnevnika.php - stranica za pregled dnevnika (loga)</li>
+            <li>moderator_centar.php - stranica za dodjelu moderatora centrima, te također kreiranje moderatora i samih centara</li>
+            <li>kreiraj_vrstu_lokaciju.php - stranica za stvaranje vrste lokacije</li>
+            <li>odobri_lokaciju.php - stranica za odobravanje lokacija</li>
+        </ol>
+        <p>Stranice koje koristi moderator</p>
+        <ol>
+            
+            <li>kreiraj_lokaciju.php - stranica za kreiranje lokacija</li>
+            <li>ispis_centara.php - stranica za ispis centara u json formatu</li>
+            <li>ispis_korisnika.php - stranica za ispis korisnika u json formatu</li>
+            <li>ispis_lokacija.php - stranica za ispis lokacija u json formatu</li>
+            
+            
+        </ol>
+        <p>Stranice koje koristi registrirani korisnik</p>
+        <ol>
+            <li>pregled_lokacija.php - stranica za pregled lokacija</li>
+        </ol>
+        <p>Ostale skripte koje se koriste u radu: </p>
+        <ol>       
+            <li>aktivacija.php - služi kao potpora Registracija.php, koristi se za aktivaciju korisničkog računa</li>
+            <li>baza.class.php - koristi se za spajanje na bazu, uzeta s labosa</li>           
+            <li>funkcije.php - sadrži 2 funkcije koje se koriste u vrijeme_pomak.php i funkciju za zapis u dnevnik</li>
+            <li>odjava.php - koristi se za odjavu korisnika</li>
+            <li>vrijeme_pomak.php - služi za postavljanje pomaka vremena</li>
+            <li>main_css.css - koristi se za sva uređenja unutar ovog projekta</li>
+            <li>reset_lozinke.php - stranica za zaboravljenu lozinku</li>
+            <li>o_autoru.html - stranica o autoru ove stranice</li>
+            <li>captcha.php - sadrži funkcije za captchu</li>
+        </ol>
+        </section>
+        
+        <h2>Korištene tehnologije</h2>
+        <section>
+            <p>Za izradu projekta korišteno je sljedeće: </p>
+            <ol>
+                <li>MySQL Workbench 6.3 CE - korišten za izradu modela baze podataka</li>
+                <li>NetBeans IDE 8.2 - korišten za izradu svih skripata i strukture</li>
+                <li>phpmyadmin.barka.foi.hr - poslužitelj koji je korišten za pohranu baze podataka</li>
+            </ol>
+        </section>
+        
+        <h2>Korišteni vanjski izvori</h2>
+        <section>
+            <p>Za pomoć pri izradi projekta korišteni su: </p>
+            <ol>
+                <li>Stackoverflow - korišten u slučaju da nešto nije bilo jasno kako napraviti, a da W3Schools to ne sadrži</li>
+                <li>W3Schools - sadrži brojne primjere koji su bili od velike pomoći pri izradi projekta</li>
+            </ol>
+            
+        </section>
+        <footer >
+
+            <h1 ></h1>
+            <address>Kontakt: <a href="mailto:dpoje@foi.hr">Dario Poje</a></address>
+            <p>&copy; 2019 D.Poje</p>
+
+        </footer>
+    </body>
+</html>
